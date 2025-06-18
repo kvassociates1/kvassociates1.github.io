@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f8;
+      color: #333;
+    }
+
+    /* Hero Section */
+    header {
+      background-color: #e6f0ff; /* changed from blue using color psychology */
+      padding: 80px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header img.logo {
+      width: 150px;
+      animation: decompress 3s ease-out forwards;
+    }
+
+    @keyframes decompress {
+      0% { transform: scaleX(1.8); opacity: 0; }
+      50% { transform: scaleX(0.4); opacity: 1; }
+      100% { transform: scaleX(1); }
+    }
+
+    header h1 {
+      margin-top: 20px;
+      font-size: 2.8rem;
+      color: #003366;
+    }
+
+    .hero-img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 40px;
+      animation: slideInUp 1.2s ease-in-out;
+    }
+
+    /* Services Section */
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      color: #003366;
+    }
+
+    .services-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .service {
+      max-width: 300px;
+    }
+
+    .service img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Accounting Software Slider */
+    .software-slider {
+      display: flex;
+      overflow-x: auto;
+      gap: 30px;
+      scroll-snap-type: x mandatory;
+      padding: 40px 20px;
+    }
+
+    .software-slider::-webkit-scrollbar {
+      display: none;
+    }
+
+    .software-slider img {
+      width: 350px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 15px;
+      scroll-snap-align: start;
+      transition: transform 0.5s;
+    }
+
+    .software-slider img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Foreign Accounting */
+    .foreign-accounting {
+      background: #f0fbff;
+      padding: 60px 20px;
+    }
+
+    .foreign-accounting p {
+      max-width: 900px;
+      margin: auto;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    /* About */
+    .about {
+      padding: 60px 20px;
+      background-color: #fff;
+    }
+
+    .about p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.1rem;
+    }
+
+    /* Blog */
+    .blog {
+      background-color: #f9f9f9;
+      padding: 60px 20px;
+    }
+
+    .blog-articles {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .article {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 280px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+
+    .footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .footer a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: underline;
+    }
+
+     html {
+    scroll-behavior: smooth;
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+ <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">KV Associates</h1>
+      <nav class="space-x-6 text-sm">
+        <a href="#" class="hover:text-yellow-400">Home</a>
+        <a href="#about" class="hover:text-yellow-400">About</a>
+        <a href="#services" class="hover:text-yellow-400">Services</a>
+        <a href="#why" class="hover:text-yellow-400">Why Us</a>
+        <a href="#faq" class="hover:text-yellow-400">FAQs</a>
+        <a href="#contact" class="hover:text-yellow-400">Contact</a>
+      </nav>
+    </div>
+ <img src="images/LOGO.PNG" class="logo" alt="KV Associates Logo">
+  <img src="images/ACCOUNTING.JPG" class="hero-img" alt="Accounting Hero"> 
+</header>
+
+<section class="section">
+  <h2>Our Services</h2>
+  <div class="services-grid">
+    <div class="service">
+      <img src="images/FINANCIAL_ADVISORY.JPG" alt="Financial Advisory">
+      <p>Financial Advisory</p>
+    </div>
+    <div class="service">
+      <img src="images/TAX_FILING.JPG" alt="Tax Filing">
+      <p>Tax Filing & GST</p>
+    </div>
+    <div class="service">
+      <img src="images/TEAMS.JPG" alt="Our Team">
+      <p>Expert Team Support</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background-color:#f0f8ff;">
+  <h2 data-aos="fade-up">Why Choose Us</h2>
+  <div class="services-grid">
+    <div class="service" data-aos="fade-right">
+      <h3>Expertise</h3>
+      <p>Years of experience in accounting & finance.</p>
+    </div>
+    <div class="service" data-aos="fade-left">
+      <h3>Accuracy</h3>
+      <p>Precision in bookkeeping, filing & compliance.</p>
+    </div>
+    <div class="service" data-aos="fade-right">
+      <h3>Support</h3>
+      <p>Always available to assist with your queries.</p>
+    </div>
+    <div class="service" data-aos="fade-left">
+      <h3>Affordable</h3>
+      <p>Professional services you can rely on economically.</p>
+    </div>
+    <div class="service" data-aos="fade-up">
+      <h3>Affordable & Economic</h3>
+      <p>Available at affordable and economic prices tailored for every client.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section foreign-accounting">
+  <h2>Foreign Accounting</h2>
+  <p>We handle international bookkeeping, tax compliance, financial reporting, and reconciliation using global standards (IFRS/GAAP). We serve clients using platforms like Xero, QuickBooks, and Zoho Books for streamlined cross-border operations.</p>
+</section>
+
+<section class="section">
+  <h2>Accounting Software Expertise</h2>
+  <div class="software-slider">
+    <img src="images/TALLY.JPG" alt="Tally">
+    <img src="images/TALLY_ERP9.JPG" alt="Tally ERP 9">
+    <img src="images/ZOHO_BOOKS.JPG" alt="Zoho Books">
+    <img src="images/QUICK_BOOKS.JPG" alt="QuickBooks">
+    <img src="images/XERO.PNG" alt="Xero">
+    <img src="images/BUSY.JPG" alt="Busy">
+  </div>
+</section>
+
+<section class="about">
+  <h2>About Me</h2>
+  <p>I am an experienced finance professional with an BCOM HONS., CA INTER, MBA in Finance. I am Currently Pursuing ACCA UK Course.  I specialize in accounting solutions, taxation, and advisory services tailored for both domestic and international clients.</p>
+</section>
+
+<section class="blog">
+  <h2 data-aos="fade-up">Finance Tips & Tax Updates</h2>
+  <div class="blog-articles">
+
+    <div class="article" data-aos="zoom-in">
+      <h3>💡 Save Tax with 80C Deductions</h3>
+      <p>Utilize investments in PPF, ELSS, and LIC to claim deductions up to ₹1.5 lakh under Section 80C.</p>
+    </div>
+
+    <div class="article" data-aos="zoom-in">
+      <h3>📊 Track Expenses with Accounting Apps</h3>
+      <p>Using tools like Zoho or QuickBooks helps you stay audit-ready and organized.</p>
+    </div>
+
+    <div class="article" data-aos="zoom-in">
+      <h3>📅 File ITR Before Due Date</h3>
+      <p>Avoid penalties and claim refunds faster by filing your income tax return before July 31.</p>
+    </div>
+
+    <div class="article" data-aos="zoom-in">
+      <h3>🌍 Optimize Foreign Remittance Tax</h3>
+      <p>Use correct remittance codes under LRS to avoid TCS and double taxation while sending money abroad.</p>
+    </div>
+
+    <div class="article" data-aos="zoom-in">
+      <h3>💼 Home Office Deductions</h3>
+      <p>If you're working from home, deduct expenses like internet, electricity, and part rent under business income.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="faq" style="background:#fff3e0;">
+  <h2 data-aos="zoom-in">Frequently Asked Questions</h2>
+  <div class="faq-container" style="max-width: 800px; margin:auto;">
+    
+    <details data-aos="fade-up">
+      <summary>1. What services do you provide?</summary>
+      <p>We offer accounting, taxation, financial advisory, GST filing, and foreign accounting services.</p>
+    </details>
+    
+    <details data-aos="fade-up">
+      <summary>2. Do you handle international clients?</summary>
+      <p>Yes, we specialize in foreign accounting using platforms like Xero, QuickBooks, and Zoho Books.</p>
+    </details>
+    
+    <details data-aos="fade-up">
+      <summary>3. How can I contact KV Associates?</summary>
+      <p>You can reach us via WhatsApp, phone, email, or Instagram – all details are in the footer.</p>
+    </details>
+
+    <details data-aos="fade-up">
+      <summary>4. Are your services affordable?</summary>
+      <p>Absolutely! We offer flexible pricing tailored for individuals, startups, and businesses.</p>
+    </details>
+
+ </div>
+</section>
+
+
+<footer class="footer">
+ <p><strong>Managing Head: Vipul</strong></p>
+  <p>Contact: 9468467296 | 9050192513</p>
+  <p>Email: kvassociates245@gmail.com | Address: DLF Colony, Rohtak, Haryana</p>
+ <p>Instagram: <a href="https://instagram.com/kvassociates1" target="_blank">@kvassociates1</a>
+    </p>
+ <a href="https://wa.me/919468467296?text=Hi%20KV%20Associates%2C%20I%20am%20interested%20in%20your%20services." target="_blank">
+  Chat on WhatsApp
+</a>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1200,
+    once: true
+  });
+</script>
+
+
+</body>
+</html>
+
