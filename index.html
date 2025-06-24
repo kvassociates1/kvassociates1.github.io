@@ -167,6 +167,62 @@
     scroll-behavior: smooth;
     }
 
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.social-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  color: #003366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 25px;
+  perspective: 1000px;
+}
+
+.icon-card {
+  width: 60px;
+  height: 60px;
+  background: #ffffff;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease-out, box-shadow 0.3s ease-out;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  will-change: transform;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.icon-card img {
+  width: 28px;
+  height: 28px;
+}
+
+.icon-card:hover {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+
   </style>
 </head>
 <body>
@@ -187,7 +243,7 @@
   <img src="images/ACCOUNTING.JPG" class="hero-img" alt="Accounting Hero"> 
 </header>
 
-<section class="section">
+<section class="section" id= "services">
   <h2>Our Services</h2>
   <div class="services-grid">
     <div class="service">
@@ -205,7 +261,7 @@
   </div>
 </section>
 
-<section class="section" style="background-color:#f0f8ff;">
+<section class="section" id="why" style="background-color:#f0f8ff;">
   <h2 data-aos="fade-up">Why Choose Us</h2>
   <div class="services-grid">
     <div class="service" data-aos="fade-right">
@@ -248,8 +304,9 @@
   </div>
 </section>
 
-<section class="about">
-  <h2>About Me</h2>
+
+<section class="about" id="about">
+  <h2 About Me</h2>
   <p>I am an experienced finance professional with an BCOM HONS., CA INTER, MBA in Finance. I am Currently Pursuing ACCA UK Course.  I specialize in accounting solutions, taxation, and advisory services tailored for both domestic and international clients.</p>
 </section>
 
@@ -313,15 +370,25 @@
 </section>
 
 
-<footer class="footer">
- <p><strong>Managing Head: Vipul</strong></p>
+<footer class="footer" id="contact">
+  <p><strong>Managing Head: Vipul</strong></p>
   <p>Contact: 9468467296 | 9050192513</p>
-  <p>Email: kvassociates245@gmail.com | Address: DLF Colony, Rohtak, Haryana</p>
- <p>Instagram: <a href="https://instagram.com/kvassociates1" target="_blank">@kvassociates1</a>
-    </p>
- <a href="https://wa.me/919468467296?text=Hi%20KV%20Associates%2C%20I%20am%20interested%20in%20your%20services." target="_blank">
-  Chat on WhatsApp
-</a>
+  <p>Email: kvassociates245@gmail.com</p>
+  <p>Address: DLF Colony, Rohtak, Haryana</p>
+  <!-- social links -->
+
+<div class="social-links">
+  <div class="icon-card" onmousemove="tiltEffect(event, this)" onmouseleave="resetTilt(this)">
+    <a href="https://instagram.com/kvassociates1" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+    </a>
+  </div>
+  <div class="icon-card" onmousemove="tiltEffect(event, this)" onmouseleave="resetTilt(this)">
+    <a href="https://wa.me/919468467296?text=Hi%20KV%20Associates%2C%20I%20am%20interested%20in%20your%20services." target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </a>
+  </div>
+</div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -331,8 +398,23 @@
     once: true
   });
 </script>
+<script>
+  const icons = document.querySelectorAll('.social-icon');
+
+  icons.forEach(icon => {
+    icon.addEventListener('mousemove', (e) => {
+      const rect = icon.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      icon.style.transform = `rotateX(${(-y / 10)}deg) rotateY(${(x / 10)}deg) scale(1.05)`;
+    });
+
+    icon.addEventListener('mouseleave', () => {
+      icon.style.transform = 'rotateX(0) rotateY(0) scale(1)';
+    });
+  });
+</script>
 
 
 </body>
 </html>
-
